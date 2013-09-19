@@ -1,0 +1,4 @@
+hubot
+=====
+
+A Hubot Instance
