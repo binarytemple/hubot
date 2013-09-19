@@ -13,7 +13,7 @@
 module.exports = (robot) ->
 
   robot.respond /(slap|smack) @?([\w .\-]+)$/i, (msg) ->
-    user = msg.match[1].trim()
+    user = msg.match[2].trim()
     msg.send('SLAP!! @' + user + ' has been slapped like a B*TCH!')
 
 
