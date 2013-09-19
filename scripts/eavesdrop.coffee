@@ -20,7 +20,4 @@ module.exports = (robot) ->
   robot.hear /\bironman\b/i, (msg) ->
     msg.send "Holy crap, nobody cares about your freaking races."
 
-  robot.hear /\bcole winans [^\s]+ a card\b/i, (msg) ->
-    msg.send "Big fracking deal, Cole did something on Trello. So what?"
-
 
