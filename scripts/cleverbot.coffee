@@ -8,10 +8,13 @@
 #   None
 #
 # Commands:
-#   hubot c <input>
+#   smartbot <input>
 #
 # Author:
 #   ajacksified
+#
+# Modified by:
+#   jgnewman
 
 cleverbot = require('cleverbot-node')
 
