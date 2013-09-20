@@ -9,7 +9,9 @@
 #   HUBOT_EMAIL_PWD  - The password associated with the account.
 #
 # Commands:
-#   hubot email <address@example.com> -s "<subject>" -m "<message>" -f <optionalFromAddress@example.com>
+#   hubot email <address@example.com> -s "<subject>" -m "<message>"
+#   hubot email:kill   - Destroys ability to send email.
+#   hubot email:reinit - Reinitializes the ability to send email after a kill.
 #
 # Author:
 #   jgnewman
@@ -17,7 +19,7 @@
 nodemailer    = require "nodemailer"
 smtpTransport = null
 
-# create reusable transport method (opens pool of SMTP connections)
+# Create reusable transport method (opens pool of SMTP connections)
 createTransport = ->
   smtpTransport = nodemailer.createTransport "SMTP", {
       service: "Gmail",
