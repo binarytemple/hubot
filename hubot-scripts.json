@@ -1,1 +1,17 @@
-["shipit.coffee"]
+[
+  "achievement_unlocked.coffee",
+  "ackbar.coffee",
+  "adult.coffee",
+  "announce.coffee",
+  "applause.coffee",
+  "bees.coffee",
+  "catfacts.coffee",
+  "cheer.coffee",
+  "chuck-norris.coffee",
+  "cloudapp.coffee",
+  "corgime.coffee",
+  "dealwithit.coffee",
+  "facepalm.coffee",
+  "shipit.coffee",
+  "zombies.coffee"
+]

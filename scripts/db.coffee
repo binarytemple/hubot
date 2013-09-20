@@ -119,30 +119,32 @@ module.exports = (robot) ->
     user = msg.match[1].trim().toLowerCase()
     aan  = msg.match[2].trim()
     role = msg.match[3].trim()
-    if user_exists(user)
-      if has_role(user, role)
-        msg.send '@' + user + ' already has that role.'
+    if user isnt "what"
+      if user_exists(user)
+        if has_role(user, role)
+          msg.send '@' + user + ' already has that role.'
+        else
+          db_cache.users[user].roles.push role
+          write_db()
+          msg.send 'Got it. Just made @' + user + ' ' + aan + ' ' + role + '.'
       else
-        db_cache.users[user].roles.push role
-        write_db()
-        msg.send 'Got it. Just made @' + user + ' ' + aan + ' ' + role + '.'
-    else
-      msg.send "I can't assign the role if you haven't registered that user, bro."
+        msg.send "I can't assign the role if you haven't registered that user, bro."
 
   # Revoke roles
   robot.respond /\@?([\w .\-]+) is not (a|an) ([\w .\-]+)\s*.*$/i, (msg) ->
     user = msg.match[1].trim().toLowerCase()
     aan  = msg.match[2].trim()
     role = msg.match[3].trim()
-    if user_exists(user)
-      if has_role(user, role)
-        db_cache.users[user].roles = remove_item(db_cache.users[user].roles, role)
-        write_db()
-        msg.send 'Got it. @' + user + ' is no longer ' + aan + ' ' + role + '.'
+    if user isnt "what"
+      if user_exists(user)
+        if has_role(user, role)
+          db_cache.users[user].roles = remove_item(db_cache.users[user].roles, role)
+          write_db()
+          msg.send 'Got it. @' + user + ' is no longer ' + aan + ' ' + role + '.'
+        else
+          msg.send "That is correct."
       else
-        msg.send "That is correct."
-    else
-      msg.send "You're right. Because that user isn't even registered yet."
+        msg.send "You're right. Because that user isn't even registered yet."
 
   # Ask about roles
   robot.respond /is \@?([\w .\-]+) (a|an) ([\w .\-]+)\?*$/i, (msg) ->

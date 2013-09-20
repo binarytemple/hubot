@@ -24,9 +24,10 @@
   },
 
   "dependencies": {
-    "hubot":         ">= 2.6.0 < 3.0.0",
-    "hubot-scripts": ">= 2.5.0 < 3.0.0",
-    "hubot-slack":   ">= 1.2.3"
+    "hubot":          ">= 2.6.0 < 3.0.0",
+    "hubot-scripts":  ">= 2.5.0 < 3.0.0",
+    "hubot-slack":    ">= 1.2.3",
+    "cleverbot-node": ">= 0.1.2"
   },
 
   "engines": {
