@@ -11,7 +11,7 @@ db_loc     = path.resolve __dirname, '../db-sim.json'
 orig_state = {"users":{}}
 db_cache   = JSON.parse fs.readFileSync(db_loc).toString()
 locks      = 0
-
+ 
 #
 # Tries to perform an asynchronous action.
 # If the action is locked, waits 10ms then tries again.
