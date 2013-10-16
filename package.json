@@ -28,7 +28,8 @@
     "hubot-scripts":  ">= 2.5.0 < 3.0.0",
     "hubot-slack":    ">= 1.2.3",
     "cleverbot-node": ">= 0.1.2",
-    "nodemailer":     ">= 0.5.2"
+    "nodemailer":     ">= 0.5.2",
+    "wolfram-alpha":  ">= 0.1.1"
   },
 
   "engines": {
