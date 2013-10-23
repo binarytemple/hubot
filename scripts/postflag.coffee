@@ -16,5 +16,5 @@
 
 module.exports = (robot) ->
 
-  robot.hear /\d+ new commits\:/i, (msg) ->
+  robot.hear /\d+ new commits?\:/i, (msg) ->
     msg.send ':us:'
