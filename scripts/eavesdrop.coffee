@@ -13,11 +13,20 @@ dreamResponses = [
   "You're about to be living a nightmare."
 ]
 
+hockeyResponses = [
+  "Oh boy are you guys talking about hockey again? What an interesting topic!",
+  "Yay another hockey discussion. Good thing we're not wasting time in here.",
+  "Shouldn't you be working on Factals instead of talking about hockey?"
+]
+
 module.exports = (robot) ->
   robot.hear /\blivin(g|\')?\ the\ dream\b/i, (msg) ->
     msg.send msg.random dreamResponses
 
   robot.hear /\bironman\b/i, (msg) ->
     msg.send "Holy crap, nobody cares about your freaking races."
+
+  robot.hear /\b(hockey|skate|skating)\b/i, (msg) ->
+    msg.send msg.random hockeyResponses
 
 
