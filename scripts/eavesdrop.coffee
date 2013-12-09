@@ -19,6 +19,10 @@ hockeyResponses = [
   "Shouldn't you be working on Factals instead of talking about hockey?"
 ]
 
+pct33 = [0, 1, 2]
+
+pct50 = [0, 1]
+
 module.exports = (robot) ->
   robot.hear /\blivin(g|\')?\ the\ dream\b/i, (msg) ->
     msg.send msg.random dreamResponses
@@ -29,4 +33,7 @@ module.exports = (robot) ->
   robot.hear /\b(hockey|skate|skating)\b/i, (msg) ->
     msg.send msg.random hockeyResponses
 
+  robot.hear /ha(ha)*/i, (msg) ->
+    choice = msg.random pct33
+    msg.send 'hahaha' unless choice isnt 0
 
