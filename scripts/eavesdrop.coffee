@@ -40,7 +40,3 @@ module.exports = (robot) ->
   robot.hear /\b(hockey|skate|skating)\b/i, (msg) ->
     msg.send msg.random hockeyResponses
 
-  robot.hear /ha(ha)+/i, (msg) ->
-    choice = msg.random pct33
-    msg.send 'hahaha' unless choice isnt 0
-
